@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandula Saiteja - Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --section-bg: #f8f8f8;
+      --accent: #000000;
+      --border-color: #e0e0e0;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+    [data-theme="dark"] {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --section-bg: #1a1a1a;
+      --accent: #ffffff;
+      --border-color: #333333;
+      --shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      --hover-shadow: 0 8px 15px rgba(255, 255, 255, 0.15);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+    }
+    nav {
+      background: var(--bg-color);
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+      box-shadow: var(--shadow);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .nav-left {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+    nav ul li a:hover {
+      background: var(--accent);
+      color: var(--bg-color);
+    }
+    #theme-toggle {
+      cursor: pointer;
+      background: var(--accent);
+      color: var(--bg-color);
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Hero Section with Photo and Intro */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+      min-height: 80vh;
+    }
+    
+    .intro-left {
+      padding-right: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 20px;
+    }
+    
+    .intro-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    
+    .profile-photo {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .profile-photo:hover {
+      transform: scale(1.05);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.75rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    
+    .hero-description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-color);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-color);
+      border: 2px solid var(--accent);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: var(--bg-color);
+      transform: translateY(-3px);
+    }
+    
+    header, footer {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 20px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+    section {
+      background: var(--section-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+    section:hover {
+      transform: scale(1.02);
+      box-shadow: var(--hover-shadow);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .project {
+      margin-bottom: 20px;
+    }
+    .project img {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project img:hover {
+      transform: scale(1.02);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .project-title {
+      font-weight: bold;
+    }
+    .contact-icons a {
+      margin: 0 10px;
+      color: var(--text-color);
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .contact-icons a:hover {
+      transform: scale(1.2);
+    }
+    .resume-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg-color);
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+        min-height: auto;
+        padding: 2rem 0;
+      }
+      
+      .intro-left {
+        padding-right: 0;
+        order: 2;
+      }
+      
+      .intro-right {
+        order: 1;
+      }
+      
+      .profile-photo {
+        width: 280px;
+        height: 280px;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .hero-description {
+        font-size: 1.1rem;
+      }
+      
+      .btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+      }
+      
+      .project img {
+        height: 200px;
+        max-width: 100%;
+        margin: 10px 0;
+      }
+      
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .nav-right {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">Sandula Saiteja</div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section with Photo and Intro -->
+    <section class="hero-section">
+      <div class="intro-left">
+        <h1 class="hero-title">Saiteja Sandula</h1>
+        <h2 class="hero-subtitle">Software Development Engineer</h2>
+        <p class="hero-description">
+          Passionate and detail-oriented Computer Science undergraduate with hands-on experience in full-stack development, Java, Python, and problem-solving. Seeking a Software Development Engineer role to contribute to building scalable, efficient software solutions while growing as a developer in a dynamic, tech-driven environment.
+        </p>
+        <div class="hero-buttons">
+          <button onclick="downloadResume()" class="btn btn-primary">📄 Download Resume</button>
+          <a href="#projects" class="btn btn-secondary">View Projects</a>
+        </div>
+      </div>
+      <div class="intro-right">
+        <img src="i.img.jpg" alt="Saiteja Sandula" class="profile-photo">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Passionate and detail-oriented Computer Science undergraduate with hands-on experience in full-stack development, Java, Python, and problem-solving. Seeking a Software Development Engineer role to contribute to building scalable, efficient software solutions while growing as a developer in a dynamic, tech-driven environment.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <h3>Programming Languages:</h3>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C/C++</li>
+      </ul>
+      <h3>Technologies:</h3>
+      <ul>
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>Data Structures</li>
+      </ul>
+      <h3>Tools:</h3>
+      <ul>
+        <li>Visual Studio Code</li>
+        <li>GitHub</li>
+        <li>MySQL</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <p class="project-title">Blogging System - Web-Based Blogging Application</p>
+        <p>Developed a modular blogging platform enabling users to write and manage articles. Designed for scalability and easy feature expansion. Backend with Spring Boot; frontend using JavaScript, HTML, and CSS.</p>
+        <p><strong>Technologies:</strong> Spring Boot, JavaScript, HTML/CSS, Eclipse</p>
+        <img src="blog.webp" alt="Blogging System" />
+      </div>
+      <div class="project">
+        <p class="project-title">Smart Homes - IoT-Based Home Automation System</p>
+        <p>Built an IoT-enabled home automation system with web-based remote control. Used Python for backend control logic and Wi-Fi for device communication. Implemented security with auto-detecting sensors.</p>
+        <p><strong>Technologies:</strong> ADE, Python, HTML/CSS/JavaScript</p>
+        <img src="iot.jpg" alt="Smart Homes IoT" />
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>BTech in Computer Science and Engineering</strong> - Anurag University, Hyderabad (Expected Graduation: 2026)</p>
+      <p>CGPA: 8.58/10</p>
+      <p><strong>Intermediate (12th):</strong> Prathibha Junior College, Hyderabad (2022) - 95%</p>
+      <p><strong>Schooling (10th):</strong> Ravindra Bharathi School, Hyderabad (2020) - CGPA: 10/10</p>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Python Essentials - Cisco</li>
+        <li>Java Programming - Infosys Springboard</li>
+        <li>Data Structures and Algorithms - CCC</li>
+        <li>Generative AI - Microsoft</li>
+        <li>Database Management - Infosys Springboard</li>
+        <li>Cybersecurity - Cisco</li>
+        <li>Cloud Certification - Google</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p><strong>Google Virtual Internship in AI/ML</strong> (Eduskills Foundation) – 2024</p>
+      <p>Completed a virtual internship in Artificial Intelligence and Machine Learning offered by Google in collaboration with Eduskills. Gained practical exposure to core AI/ML concepts including supervised learning, model training, and deployment using real-world datasets.</p>
+    </section>
+
+    <section id="extracurricular">
+      <h2>Extracurricular & Hackathons</h2>
+      <ul>
+        <li>Member of Kriya and Incube Clubs</li>
+        <li>Participated in Smart India Hackathon (SIH)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-icons">
+        <a href="mailto:saitejasandula4@gmail.com">✉️</a>
+        <a href="https://linkedin.com/in/sandula-saiteja-b42098251" target="_blank">🔗</a>
+        <a href="https://github.com/saitejasandula" target="_blank">💻</a>
+        <a href="tel:+916281027383">📞</a>
+      </div>
+      <p><strong>Phone:</strong> +91 6281027383</p>
+      <p><strong>Email:</strong> saitejasandula4@gmail.com</p>
+      <p><strong>Address:</strong> 14-2-86/2/f, Srirama Colony, Mahbubnagar, Telangana, India</p>
+      <p><strong>Leetcode:</strong> <a href="#" target="_blank">link</a></p>
+      <p><strong>HackerRank:</strong> <a href="#" target="_blank">link</a></p>
+      <button onclick="downloadResume()" class="resume-btn">📄 Download Resume</button>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Sandula Saiteja. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const newTheme = theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      toggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+    document.documentElement.setAttribute('data-theme', 'light');
+
+    // Resume download function
+    function downloadResume() {
+      try {
+        // Get all resume buttons
+        const resumeButtons = document.querySelectorAll('.btn-primary, .resume-btn');
+        
+        // Add loading state to all buttons
+        resumeButtons.forEach(btn => {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '⏳ Downloading...';
+          btn.disabled = true;
+          btn.style.opacity = '0.7';
+          btn.style.cursor = 'not-allowed';
+        });
+
+        // Create download link
+        const link = document.createElement('a');
+        link.href = 'Resume.res.pdf';
+        link.download = 'Sandula_Saiteja_Resume.pdf';
+        link.style.display = 'none';
+        
+        // Trigger download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Show success message
+        setTimeout(() => {
+          showNotification('Resume downloaded successfully!', 'success');
+          
+          // Reset all buttons
+          resumeButtons.forEach(btn => {
+            btn.innerHTML = '📄 Download Resume';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btn.style.cursor = 'pointer';
+          });
+        }, 1500);
+
+      } catch (error) {
+        console.error('Error downloading resume:', error);
+        
+        // Try fallback method
+        try {
+          window.open('Resume.res.pdf', '_blank');
+          showNotification('Resume opened in new tab!', 'info');
+        } catch (fallbackError) {
+          console.error('Fallback download failed:', fallbackError);
+          showNotification('Failed to download resume. Please check if the file exists.', 'error');
+        }
+        
+        // Reset all buttons on error
+        const resumeButtons = document.querySelectorAll('.btn-primary, .resume-btn');
+        resumeButtons.forEach(btn => {
+          btn.innerHTML = '📄 Download Resume';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+          btn.style.cursor = 'pointer';
+        });
+      }
+    }
+
+    // Notification function
+    function showNotification(message, type = 'info') {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <div class="notification-content">
+          <span>${message}</span>
+        </div>
+      `;
+      
+      // Add styles
+      const bgColor = type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6';
+      notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${bgColor};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 400px;
+        font-weight: 500;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animate in
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+      
+      // Remove after 4 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+          }
+        }, 300);
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
