@@ -1,0 +1,119 @@
+Saiteja Sandula
+
+PH: +916281027383
+
+Gmail: saitejasandula4@gmail.com |
+
+Linkedin: www.linkedin.com/in/sandula-
+
+saiteja-b42098251 1 Address: 14-2-86/2/f, srirama colony, mahbubnagar, telangana, india
+
+Git: https://github.com/saitejasandula
+
+CAREER OBJECTIVE:
+
+Passionate and detail-oriented Computer Science undergraduate with hands-on experience in full-stack development, Java, Python, and problem-solving. Seeking a Software Development Engineer role to contribute to building scalable, efficient software solutions while growing as a developer in a dynamic, tech-driven environment.
+
+SKILLS:
+
+Programming languages:
+
+Tools:
+
+Python
+
+Visual code studio
+
+Java
+
+Github
+
+C/C++
+
+Database: MySql
+
+Technologies:
+
+Html/Css
+
+Javascript
+
+Data Structures
+
+GOOGLE VIRTUAL INTERNSHIP IN AI/ML - EDUSKILLS FOUNDATION
+
+Completed a virtual internship in Artificial Intelligence and Machine Learning offered by Google in collaboration with Eduskills. Gained practical exposure to core Al/ML concepts including supervised learning. model training, and deployment using real-world datasets.
+
+PROJECTS:
+
+Blogging System
+
+Web-Based Blogging Application
+
+Developed a modular blogging platform enabling users to write and manage articles.
+
+Designed for scalability and easy feature expansion.
+
+Backend with Spring Boot: frontend using JavaScript, HTML, and CSS.
+
+Technologies: Spring Boot, JavaScript, HTML/CSS, Eclipse
+
+Smart Homes
+
+-IoT-Based Home Automation System
+
+Built an loT-enabled home automation system with web-based remote control.
+
+Used Python for backend control logic and Wi-Fi for device communication.
+
+Implemented security with auto-detecting sensors.
+
+Technologies: ADE, Python, HTML/CSS/JavaScript
+
+CERTIFICATIONS:
+
+Python Essentials - Cisco
+
+Java Programming - Infosys Springboard
+
+Data Structures and Algorithms-CCC
+
+Generative Al - Microsoft
+
+EDUCATION
+
+Tech in Computer Science and Engineering
+
+Anurag University, Hyderabad
+
+Database Management-Infosys
+
+Springboard
+
+Cybersecurity-Cisco
+
+Cloud Certification - Google
+
+EXTRACURRICULAR & HACKATHONS
+
+Member of Kriya and Incube Clubs
+
+Participated in Smart India
+
+Hackathon (SIH)
+
+Expected Graduation: 2026 | CGPA: 8.58/10
+
+Intermediate (12th)
+
+Prathibha Junior College, Hyderabad
+
+Year: 2022 | Percentage: 95%
+
+Schooling (10th)
+
+Ravindra Bharathi School, Hyderabad Year: 2020 CGPA: 10/10
+
+Leetcode: link
+
+Hackerank: link
